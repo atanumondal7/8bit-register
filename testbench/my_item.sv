@@ -1,0 +1,24 @@
+`ifndef MY_ITEM_SV
+`define MY_ITEM_SV
+
+class my_item extends uvm_sequence_item;
+
+logic rst_n;
+logic load;
+logic data_in;
+
+function new(string name = "my_item");
+super.new(name);
+endfunction
+
+`uvm_object_utils(my_item)
+
+`uvm_field_int(rst_n, UVM_ALL_ON)
+`uvm_field_int(load, UVM_ALL_ON)
+`uvm_field_int(data_in, UVM_ALL_ON)
+
+`uvm_object_utils_end
+
+endclass
+
+`endif
