@@ -20,7 +20,7 @@ logic [7:0] exp_data_out;
 
 exp_data_out = item.data_in;
 
-if(exp_data_out === item.data_in) begin
+if(exp_data_out === item.data_out) begin
 `uvm_info("SCB", $sformatf("|SUCCESS| rst_n=%0b, load=%0b, data_in=%0d -> data_out=%0d", item.rst_n, item.load, item.data_in, item.data_out), UVM_LOW)
 ++pass_count;
 end
@@ -37,10 +37,10 @@ super.report_phase(phase);
 `uvm_info("SUMMARY", $sformatf("Tests failed: %0d", fail_count), UVM_LOW)
 
 if(fail_count > 0) begin
-`uvm_info("SUMMARY", ">>>> SIMULATION FAILED <<<<")
+`uvm_info("SUMMARY", ">>>> SIMULATION FAILED <<<<", UVM_LOW)
 end
 else begin
-`uvm_info("SUMMARY", ">>>> SIMULATION PASSED <<<<")
+`uvm_info("SUMMARY", ">>>> SIMULATION PASSED <<<<", UVM_LOW)
 end
 
 endfunction

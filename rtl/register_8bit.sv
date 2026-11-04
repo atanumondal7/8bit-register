@@ -1,6 +1,7 @@
 `timescale 1ns/1ps
 
 module register_8bit (
+input logic clk,
 input logic rst_n,
 input logic load,
 input logic [7:0] data_in,

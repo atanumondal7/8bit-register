@@ -1,8 +1,5 @@
 `timescale 1ns/1ps
 
-`ifndef MY_TOP_SV
-`define MY_TOP_SV
-
 import uvm_pkg::*;
 import my_pkg::*;
 `include "uvm_macros.svh"
@@ -31,5 +28,3 @@ run_test("my_test");
 end
 
 endmodule
-
-`endif

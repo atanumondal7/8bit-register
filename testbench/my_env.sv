@@ -3,7 +3,7 @@
 
 class my_env extends uvm_env;
 
-`uvm_component_utils(my_environment)
+`uvm_component_utils(my_env)
 
 my_agent agent;
 my_scoreboard scoreboard;

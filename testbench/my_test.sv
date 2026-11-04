@@ -17,9 +17,9 @@ env = my_env::type_id::create("env", this);
 endfunction
 
 task run_phase(uvm_phase phase);
-my_item seq;
+my_sequence seq;
 phase.raise_objection(this);
-seq = my_item::type_id::create("seq");
+seq = my_sequence::type_id::create("seq");
 seq.start(env.agent.sequencer);
 phase.drop_objection(this);
 endtask

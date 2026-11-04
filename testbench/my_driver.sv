@@ -21,9 +21,9 @@ endfunction
 task run_phase(uvm_phase phase);
 forever begin
 seq_item_port.get_next_item(req);
-vif.cb.rst_n = req.rst_n;
-vif.cb.load = req.load;
-vif.cb.data_in = req.data_in;
+vif.rst_n <= req.rst_n;
+vif.load <= req.load;
+vif.data_in <= req.data_in;
 @(vif.cb);
 seq_item_port.item_done();
 end
