@@ -15,7 +15,7 @@ endfunction
 function void build_phase(uvm_phase phase);
 super.build_phase(phase);
 agent = my_agent::type_id::create("agent", this);
-scoreboard = my_scoreboard::type_id::create("env", this);
+scoreboard = my_scoreboard::type_id::create("scoreboard", this);
 endfunction
 
 function void connect_phase(uvm_phase phase);

@@ -8,6 +8,7 @@ uvm_analysis_imp #(my_item, my_scoreboard) item_imp;
 
 int pass_count = 0;
 int fail_count = 0;
+logic [7:0] exp_data_out;
 
 function new(string name, uvm_component parent);
 super.new(name, parent);
@@ -16,11 +17,14 @@ endfunction
 
 function void write(my_item item);
 
-logic [7:0] exp_data_out;
-
+if(!item.rst_n) begin
+exp_data_out = '0;
+end
+else if(item.load) begin
 exp_data_out = item.data_in;
+end
 
-if(exp_data_out === item.data_out) begin
+if(exp_data_out == item.data_out) begin
 `uvm_info("SCB", $sformatf("|SUCCESS| rst_n=%0b, load=%0b, data_in=%0d -> data_out=%0d", item.rst_n, item.load, item.data_in, item.data_out), UVM_LOW)
 ++pass_count;
 end

@@ -5,14 +5,15 @@ class my_item extends uvm_sequence_item;
 
 logic rst_n;
 logic load;
-logic data_in;
+logic [7:0] data_in;
 
-logic data_out;
+logic [7:0] data_out;
 `uvm_object_utils_begin(my_item)
 
 `uvm_field_int(rst_n, UVM_ALL_ON)
 `uvm_field_int(load, UVM_ALL_ON)
 `uvm_field_int(data_in, UVM_ALL_ON)
+`uvm_field_int(data_out, UVM_ALL_ON)
 
 `uvm_object_utils_end
 
